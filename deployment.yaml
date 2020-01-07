@@ -1,0 +1,30 @@
+# This deployment describes the pods.
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: example-gke-workload-identity
+  namespace: storage-consumer-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      serviceAccountName: storage-consumer-ksa
+      containers:
+      - name: hello-app
+        # Replace with your own image, or use the debricked example.
+        image: debricked/example-gke-workload-identity-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
+        # TODO: replace with your own bucket name.
+          - name: BUCKET_NAME
+            value: gke-workload-identity-playground-bucket
+

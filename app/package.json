@@ -1,0 +1,19 @@
+{
+  "name": "example-gke-workload-identity-app",
+  "version": "1.0.0",
+  "description": "Simple app to test Workload identity",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/debricked/example-gke-workload-identity.git"
+  },
+  "author": "Linus Karlsson <linus.karlsson@debricked.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^4.2.0",
+    "express": "^4.17.1"
+  }
+}

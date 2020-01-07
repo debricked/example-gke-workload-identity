@@ -1,0 +1,13 @@
+# The service provides a load-balancer to access the pods.
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello
+  namespace: storage-consumer-ns
+spec:
+  type: LoadBalancer
+  selector:
+    app: hello
+  ports:
+  - port: 80
+    targetPort: 8080
