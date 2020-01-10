@@ -17,7 +17,7 @@ spec:
       serviceAccountName: storage-consumer-ksa
       containers:
       - name: hello-app
-        # Replace with your own image, or use the debricked example.
+        # TODO: Replace with your own image, or use the debricked example.
         image: debricked/example-gke-workload-identity-app:latest
         ports:
         - containerPort: 8080
